@@ -36,7 +36,7 @@
                         <div class="row">
                             <div class="col my-auto">
                                 <a href="https://www.apple.com/la/app-store/" target="_blank">
-                                    <img src="../assets/appstore.jpg" class="float-right img-fluid " alt="appstore">
+                                    <img src="../assets/appstore.jpg" class="float-right img-fluid" alt="appstore">
                                 </a>
                             </div>
                             <div class="col my-auto">
@@ -108,7 +108,7 @@
                         placeholder="Enter your E-mail"
                         >
                         <textarea
-                        v-model="contact_message" 
+                        v-model="contact_message"
                         class="form-control mt-3"
                         placeholder="Enter your message"
                         rows="5"
@@ -167,17 +167,8 @@ export default{
             
             } else if (this.contact_message.length < 20) {
                 this.contact_notice= "Your message is too short"
-            
             } 
-            // else {
-            //     const url = `https://us-central1-swacademy-budget-eefcd.cloudfunctions.net/sendEmail?email_form=${this.contact_email}&message=${this.contact_message}`
-            //     const requestOptions = {
-            //         methods: "GET",
-            //         headers: { "Content-Type": "application/json"}
-            //     };
-            //     fetch(url, requestOptions);
-            //     this.show_contact = false
-            // }
+            else this.show_contact = false
         },
         validEmail(email){
             var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -199,7 +190,6 @@ export default{
 }
 
 #price{
-    background: rgb(37,37,37);
     background: radial-gradient(circle, rgba(37,37,37,0.8883928571428571) 0%, rgba(14,14,14,1) 100%);
     min-height: 30vh;
 }
